@@ -20,15 +20,15 @@ class App extends Component {
     this.onRemove = this.onRemove.bind(this);
     this.onAdd = this.onAdd.bind(this);
   }
-
   onRemove(i) {
     const items = this.state.items.slice();
     items.splice(i, 1);
     this.setState({ items });
   }
   onAdd() {
-    const items = this.state.items.slice();
-    items.push(Math.max(...items) + 1);
+    console.log("laa");
+    const items = [...this.state.items];
+    items.push("Laaaaa");
     this.setState({ items });
   }
   changer() {
@@ -44,7 +44,7 @@ class App extends Component {
         <TransitionGroup>
           {this.state.items.map((id, i) => (
             <Fade key={id} in={this.state.show} onClick={this.onRemove(i)}>
-              <p>Blabla</p>
+              Click to remove
             </Fade>
           ))}
         </TransitionGroup>
