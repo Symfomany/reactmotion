@@ -1,9 +1,6 @@
 import transition from "styled-transition-group";
 
-const Fade = transition.div.attrs({
-  unmountOnExit: true,
-  timeout: 1000
-})`
+const Fade = transition.div`
     padding: 20px;
     background-color: #ccc;
     width: 200px;
