@@ -6,23 +6,11 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import { MyGrid } from "../styled/MyGrid";
 
 // Example: https://stackblitz.com/edit/01-styled-transition-group?file=index.js
 // Example: https://stackblitz.com/edit/03-styled-transition-group?file=index.js
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1
-  },
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: "center",
-    color: theme.palette.text.secondary
-  }
-});
+const styles = theme => ({});
 
 class App extends Component {
   constructor(props) {
@@ -39,7 +27,6 @@ class App extends Component {
     this.changer = this.changer.bind(this);
     this.onRemove = this.onRemove.bind(this);
     this.onAdd = this.onAdd.bind(this);
-    this.handleVisible = this.handleVisible.bind(this);
   }
   onRemove(i) {
     const items = this.state.items.slice();
@@ -57,9 +44,7 @@ class App extends Component {
       show: !this.state.show
     });
   }
-  handleVisible() {
-    this.setState({ show: !this.state.show });
-  }
+
   render() {
     const { classes } = this.props;
 
@@ -72,23 +57,10 @@ class App extends Component {
             </Typography>
           </Toolbar>
         </AppBar>
-        <div className={classes.root}>
-          <Grid container spacing={24}>
-            <Grid item xs={6}>
-              <Button
-                onClick={this.handleVisible}
-                variant="contained"
-                color="primary"
-              >
-                Clicker-moi
-              </Button>
-            </Grid>
 
-            <MyGrid xs={6} sm={6} visible={this.state.show}>
-              <Paper className={classes.paper}>xs=12 sm=6</Paper>
-            </MyGrid>
-          </Grid>
-        </div>
+        <Button className={classes.button} variant="contained" color="primary">
+          Hello World
+        </Button>
 
         {/*  <button onClick={this.changer}>Cliquer moi</button>
         <TransitionGroup>

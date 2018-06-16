@@ -8,7 +8,6 @@ import { withStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import { MyGrid } from "../styled/MyGrid";
 
 // Example: https://stackblitz.com/edit/01-styled-transition-group?file=index.js
 // Example: https://stackblitz.com/edit/03-styled-transition-group?file=index.js
@@ -39,7 +38,6 @@ class App extends Component {
     this.changer = this.changer.bind(this);
     this.onRemove = this.onRemove.bind(this);
     this.onAdd = this.onAdd.bind(this);
-    this.handleVisible = this.handleVisible.bind(this);
   }
   onRemove(i) {
     const items = this.state.items.slice();
@@ -57,9 +55,7 @@ class App extends Component {
       show: !this.state.show
     });
   }
-  handleVisible() {
-    this.setState({ show: !this.state.show });
-  }
+
   render() {
     const { classes } = this.props;
 
@@ -75,18 +71,14 @@ class App extends Component {
         <div className={classes.root}>
           <Grid container spacing={24}>
             <Grid item xs={6}>
-              <Button
-                onClick={this.handleVisible}
-                variant="contained"
-                color="primary"
-              >
+              <Button variant="contained" color="primary">
                 Clicker-moi
               </Button>
             </Grid>
 
-            <MyGrid xs={6} sm={6} visible={this.state.show}>
+            <Grid className={classes.grid} item xs={6} sm={6}>
               <Paper className={classes.paper}>xs=12 sm=6</Paper>
-            </MyGrid>
+            </Grid>
           </Grid>
         </div>
 

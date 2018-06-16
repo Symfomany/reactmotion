@@ -39,7 +39,7 @@ class App extends Component {
     this.changer = this.changer.bind(this);
     this.onRemove = this.onRemove.bind(this);
     this.onAdd = this.onAdd.bind(this);
-    this.handleVisible = this.handleVisible.bind(this);
+    this.handleVisible; = this.handleVisible.bind(this);
   }
   onRemove(i) {
     const items = this.state.items.slice();
@@ -57,8 +57,10 @@ class App extends Component {
       show: !this.state.show
     });
   }
-  handleVisible() {
-    this.setState({ show: !this.state.show });
+  handleVisible(){
+    this.setState({
+      visible: !this.state.visible
+    })
   }
   render() {
     const { classes } = this.props;
@@ -75,11 +77,7 @@ class App extends Component {
         <div className={classes.root}>
           <Grid container spacing={24}>
             <Grid item xs={6}>
-              <Button
-                onClick={this.handleVisible}
-                variant="contained"
-                color="primary"
-              >
+              <Button onClick={this.handleVisible} variant="contained" color="primary">
                 Clicker-moi
               </Button>
             </Grid>

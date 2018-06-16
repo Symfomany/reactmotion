@@ -8,10 +8,5 @@ import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 // create le theme a partir de theme existant (objet)
 const myTheme = createMuiTheme(theme);
 
-ReactDOM.render(
-  <MuiThemeProvider theme={myTheme}>
-    <App />
-  </MuiThemeProvider>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));
 registerServiceWorker();

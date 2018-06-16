@@ -58,7 +58,9 @@ class App extends Component {
     });
   }
   handleVisible() {
-    this.setState({ show: !this.state.show });
+    this.setState({
+      visible: !this.state.visible
+    });
   }
   render() {
     const { classes } = this.props;
