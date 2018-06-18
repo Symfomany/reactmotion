@@ -92,12 +92,8 @@ class App extends Component {
             </Grid>
 
             <VelocityComponent
-              animation={{
-                opacity: this.state.show ? 1 : 0,
-                width: this.state.show ? 650 : 850
-              }}
+              animation={{ opacity: this.state.show ? 1 : 0 }}
               duration={500}
-              easing="swing"
             >
               <Paper className={classes.paper}>
                 <img src="https://d3p157427w54jq.cloudfront.net/uploads/2018/06/SITE-Selena-Gomez.jpg" />

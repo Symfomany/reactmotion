@@ -92,10 +92,7 @@ class App extends Component {
             </Grid>
 
             <VelocityComponent
-              animation={{
-                opacity: this.state.show ? 1 : 0,
-                width: this.state.show ? 650 : 850
-              }}
+              animation={{ opacity: this.state.show ? 1 : 0 }}
               duration={500}
               easing="swing"
             >

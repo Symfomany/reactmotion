@@ -30,7 +30,8 @@ const MyGridThree = styled(Grid)`
 `;
 
 const MyGridFour = styled(Grid)`
-  display: ${props => (props.visible ? "block" : "none")};
-  ${props => (props.visible ? "animation : 2s " + tadaFlip : null)};
+  opacity: ${props => (props.visible ? 1 : 0)};
+  transition: all 0.2s ease;
+  ${props => (props.visible ? "animation : 0.5s " + tadaFlip : null)};
 `;
 export { MyGrid, MyGridTwo, MyGridThree, MyGridFour };

@@ -1,18 +1,9 @@
 import styled, { keyframes } from "styled-components";
 import { Grid } from "@material-ui/core";
-import {
-  bounce,
-  flash,
-  pulse,
-  shake,
-  tada,
-  flip,
-  merge
-} from "react-animations";
+import { bounce, flash, pulse, shake } from "react-animations";
 
 const bounceAnimation = keyframes`${bounce}`;
 const flashAnimation = keyframes`${shake}`;
-const tadaFlip = keyframes`${merge(tada, flip)}`;
 
 const MyGrid = styled(Grid)`
   opacity: ${props => (props.visible ? 1 : 0)};
@@ -28,9 +19,4 @@ const MyGridThree = styled(Grid)`
   transition: all 0.2s ease;
   ${props => (props.visible ? "animation : 0.5s " + flashAnimation : null)};
 `;
-
-const MyGridFour = styled(Grid)`
-  display: ${props => (props.visible ? "block" : "none")};
-  ${props => (props.visible ? "animation : 2s " + tadaFlip : null)};
-`;
-export { MyGrid, MyGridTwo, MyGridThree, MyGridFour };
+export { MyGrid, MyGridTwo, MyGridThree };

@@ -8,8 +8,8 @@ import { withStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import { MyGrid, MyGridTwo, MyGridThree, MyGridFour } from "../styled/MyGrid";
-import { VelocityComponent } from "velocity-react";
+import { MyGrid, MyGridTwo, MyGridThree } from "../styled/MyGrid";
+
 // Example: https://stackblitz.com/edit/01-styled-transition-group?file=index.js
 // Example: https://stackblitz.com/edit/03-styled-transition-group?file=index.js
 
@@ -73,13 +73,6 @@ class App extends Component {
           </Toolbar>
         </AppBar>
         <div className={classes.root}>
-          {/*<MyGrid xs={6} sm={6} visible={this.state.show}>
-            <Paper className={classes.paper}>
-              <p>ici</p>
-              <img src="https://d3p157427w54jq.cloudfront.net/uploads/2018/06/SITE-Selena-Gomez.jpg" />
-            </Paper>
-    </MyGrid> */}
-
           <Grid container spacing={24}>
             <Grid item xs={6}>
               <Button
@@ -91,38 +84,23 @@ class App extends Component {
               </Button>
             </Grid>
 
-            <VelocityComponent
-              animation={{
-                opacity: this.state.show ? 1 : 0,
-                width: this.state.show ? 650 : 850
-              }}
-              duration={500}
-              easing="swing"
-            >
-              <Paper className={classes.paper}>
-                <img src="https://d3p157427w54jq.cloudfront.net/uploads/2018/06/SITE-Selena-Gomez.jpg" />
-              </Paper>
-            </VelocityComponent>
-          </Grid>
-        </div>
-      </div>
-    );
-    {
-      /*<MyGridTwo xs={6} sm={6} visible={this.state.show}>
+            <MyGridTwo xs={6} sm={6} visible={this.state.show}>
               <Paper className={classes.paper}>
                 <img src="https://d3p157427w54jq.cloudfront.net/uploads/2018/06/SITE-Selena-Gomez.jpg" />
               </Paper>
             </MyGridTwo>
+
             <MyGridThree xs={6} sm={6} visible={this.state.show}>
               <Paper className={classes.paper}>
                 <img src="https://d3p157427w54jq.cloudfront.net/uploads/2018/06/SITE-Selena-Gomez.jpg" />
               </Paper>
             </MyGridThree>
+
             <MyGridFour xs={6} sm={6} visible={this.state.show}>
               <Paper className={classes.paper}>
                 <img src="https://d3p157427w54jq.cloudfront.net/uploads/2018/06/SITE-Selena-Gomez.jpg" />
               </Paper>
-            </MyGridFour>/}
+            </MyGridFour>
           </Grid>
         </div>
 
@@ -134,9 +112,9 @@ class App extends Component {
             </Fade>
           ))}
         </TransitionGroup>
-        <button onClick={this.onAdd}>Add an Item</button> 
-      </div>;*/
-    }
+        <button onClick={this.onAdd}>Add an Item</button> */}
+      </div>
+    );
   }
 }
 

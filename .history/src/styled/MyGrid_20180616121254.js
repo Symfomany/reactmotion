@@ -12,7 +12,7 @@ import {
 
 const bounceAnimation = keyframes`${bounce}`;
 const flashAnimation = keyframes`${shake}`;
-const tadaFlip = keyframes`${merge(tada, flip)}`;
+const tadaFlip = merge(tada, flip);
 
 const MyGrid = styled(Grid)`
   opacity: ${props => (props.visible ? 1 : 0)};
@@ -26,11 +26,6 @@ const MyGridTwo = styled(Grid)`
 const MyGridThree = styled(Grid)`
   opacity: ${props => (props.visible ? 1 : 0)};
   transition: all 0.2s ease;
-  ${props => (props.visible ? "animation : 0.5s " + flashAnimation : null)};
+  ${props => (props.visible ? "animation : 0.5s " + tadaFlip : null)};
 `;
-
-const MyGridFour = styled(Grid)`
-  display: ${props => (props.visible ? "block" : "none")};
-  ${props => (props.visible ? "animation : 2s " + tadaFlip : null)};
-`;
-export { MyGrid, MyGridTwo, MyGridThree, MyGridFour };
+export { MyGrid, MyGridTwo, MyGridThree };

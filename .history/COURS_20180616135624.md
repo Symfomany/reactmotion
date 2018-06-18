@@ -1,0 +1,21 @@
+# Animation Cubic CSS
+
+```
+  transition: width 2s;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+```
+
+http://cubic-bezier.com/#0,0,.58,1
+Code: https://www.w3schools.com/cssref/tryit.asp?filename=trycss_func_cubic-bezier
+Essai: https://matthewlein.com/tools/ceaser
+List:https://easings.net/fr
+
+Examples: https://www.w3.org/Talks/2012/0416-CSS-WWW2012/slide-transitions.html
+
+# Animation Step by step by Sprite en Keyframes
+
+http://jsfiddle.net/simurai/CGmCe/light/
+
+# React Animations
+
+https://github.com/FormidableLabs/react-animations

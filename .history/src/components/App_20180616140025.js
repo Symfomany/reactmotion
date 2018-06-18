@@ -94,7 +94,7 @@ class App extends Component {
             <VelocityComponent
               animation={{
                 opacity: this.state.show ? 1 : 0,
-                width: this.state.show ? 650 : 850
+                width: this.state.show ? 650 : 450
               }}
               duration={500}
               easing="swing"
