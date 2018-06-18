@@ -7,6 +7,10 @@ UI Elements at 60fps (Progressive Web App Summit 2016)
   https://youtu.be/ZqdNgn5Huqk
 ```
 
+# Animation CSS, JS se lance..;
+
+Quand l'onglet est actif :)
+
 # Animations Burger Menus
 
 ```
@@ -140,3 +144,11 @@ http://animejs.com/
 # GreenSock GSAP
 
 CheatSheet: [https://ihatetomatoes.net/wp-content/uploads/2016/07/GreenSock-Cheatsheet-4.pdf](https://ihatetomatoes.net/wp-content/uploads/2016/07/GreenSock-Cheatsheet-4.pdf)
+
+# React Motion
+
+Examples:
+
+```
+Codesandbox: https://github.com/drcmda/react-spring/tree/master/examples
+```
