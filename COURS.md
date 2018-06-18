@@ -136,3 +136,7 @@ https://minimamente.com/example/magic_animations/
 # AnimeJS
 
 http://animejs.com/
+
+# GreenSock GSAP
+
+CheatSheet: [https://ihatetomatoes.net/wp-content/uploads/2016/07/GreenSock-Cheatsheet-4.pdf](https://ihatetomatoes.net/wp-content/uploads/2016/07/GreenSock-Cheatsheet-4.pdf)
