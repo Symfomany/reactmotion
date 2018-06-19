@@ -26,7 +26,6 @@ import { Burger } from "../styled/Burger";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import AlarmIcon from "@material-ui/icons/Alarm";
 import "./wickedcss.min.css";
-import { StyledImage } from "../styled/StyledImage";
 // https://material-ui.com/demos/drawers/#swipeable-temporary-drawer
 
 // Example: https://stackblitz.com/edit/01-styled-transition-group?file=index.js
@@ -156,16 +155,16 @@ class App extends Component {
                   </Typography>
 
                   <div className="floater">
-                    <Gsap />
+                    <Typography variant="display2">
+                      Bienvenue dans les animations
+                    </Typography>
                   </div>
+
+                  <Gsap />
                 </Grid>
               </Grid>
             </Grid>
           </div>
-
-          <StyledImage>
-            <img src="https://www.styled-components.com/static/atom.png" />
-          </StyledImage>
 
           {/*<Grid container xs={12}>
             <Grid item xs={6}>

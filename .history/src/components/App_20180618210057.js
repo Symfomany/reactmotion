@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { withStyles, IconButton } from "@material-ui/core";
+import { withStyles } from "@material-ui/core";
 // import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -19,27 +19,13 @@ import { TweenMax, TweenLite } from "gsap/TweenMax";
 import Home from "./Home";
 import Contact from "./Contact";
 import Router from "react-router-dom/Router";
-import Gsap from "./Gsap";
-import MenuIcon from "@material-ui/icons/Menu";
-import Button from "@material-ui/core/Button";
-import { Burger } from "../styled/Burger";
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import AlarmIcon from "@material-ui/icons/Alarm";
-import "./wickedcss.min.css";
-import { StyledImage } from "../styled/StyledImage";
-// https://material-ui.com/demos/drawers/#swipeable-temporary-drawer
 
 // Example: https://stackblitz.com/edit/01-styled-transition-group?file=index.js
 // Example: https://stackblitz.com/edit/03-styled-transition-group?file=index.js
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
-    height: 430,
-    zIndex: 1,
-    overflow: "hidden",
-    position: "relative",
-    display: "flex"
+    flexGrow: 1
   },
   grid: {
     width: 450,
@@ -49,30 +35,6 @@ const styles = theme => ({
     padding: theme.spacing.unit * 3,
     textAlign: "center",
     color: theme.palette.text.secondary
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20
-  },
-  sidebar: {
-    width: 300
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1
-  },
-  drawerPaper: {
-    position: "relative",
-    width: 300
-  },
-  content: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3,
-    minWidth: 0 // So the Typography noWrap works
-  },
-  icon: {
-    margin: theme.spacing.unit,
-    color: "gold"
   }
 });
 
@@ -121,51 +83,28 @@ class App extends Component {
   render() {
     const { classes } = this.props;
     const { match, location, history } = this.props;
-    const classBurger = this.state.show
-      ? "hamburger hamburger--arrow is-active"
-      : "hamburger hamburger--arrow";
+
     return (
-      <div className={classes.root}>
-        <AppBar position="absolute" className={classes.appBar}>
+      <div>
+        <AppBar position="static">
           <Toolbar>
-            <Burger
-              className={classBurger}
-              type="button"
-              aria-controls="navigation"
-              aria-expanded="true/false"
-              onClick={this.handleVisible}
-            >
-              <span className="hamburger-box">
-                <div className="hamburger-inner" />
-              </span>
-            </Burger>
             <Typography variant="title" color="inherit">
               ReactJs Rocks!
             </Typography>
           </Toolbar>
         </AppBar>
-
-        <main className={classes.content}>
-          <div className={classes.toolbar} />
+        <div className={classes.root}>
           <div style={{ padding: 20 }}>
             <Grid container spacing={40}>
               <Grid item xs={12}>
                 <Grid container justify="center" spacing={10}>
-                  <Typography variant="display2">
-                    Bienvenue dans les animations
+                  <Typography variant="display4">
+                    Bienvenu dans les animations
                   </Typography>
-
-                  <div className="floater">
-                    <Gsap />
-                  </div>
                 </Grid>
               </Grid>
             </Grid>
           </div>
-
-          <StyledImage>
-            <img src="https://www.styled-components.com/static/atom.png" />
-          </StyledImage>
 
           {/*<Grid container xs={12}>
             <Grid item xs={6}>
@@ -286,7 +225,7 @@ class App extends Component {
           </Grid>
 
           */}
-        </main>
+        </div>
       </div>
     );
     {

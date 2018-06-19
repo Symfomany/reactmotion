@@ -163,9 +163,7 @@ class App extends Component {
             </Grid>
           </div>
 
-          <StyledImage>
-            <img src="https://www.styled-components.com/static/atom.png" />
-          </StyledImage>
+          <StyledImage src="https://www.styled-components.com/static/atom.png" />
 
           {/*<Grid container xs={12}>
             <Grid item xs={6}>

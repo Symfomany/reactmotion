@@ -21,25 +21,14 @@ import Contact from "./Contact";
 import Router from "react-router-dom/Router";
 import Gsap from "./Gsap";
 import MenuIcon from "@material-ui/icons/Menu";
-import Button from "@material-ui/core/Button";
-import { Burger } from "../styled/Burger";
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import AlarmIcon from "@material-ui/icons/Alarm";
-import "./wickedcss.min.css";
-import { StyledImage } from "../styled/StyledImage";
-// https://material-ui.com/demos/drawers/#swipeable-temporary-drawer
+import hamburger from "hamburgers/dist/hamburgers.css";
 
 // Example: https://stackblitz.com/edit/01-styled-transition-group?file=index.js
 // Example: https://stackblitz.com/edit/03-styled-transition-group?file=index.js
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
-    height: 430,
-    zIndex: 1,
-    overflow: "hidden",
-    position: "relative",
-    display: "flex"
+    flexGrow: 1
   },
   grid: {
     width: 450,
@@ -53,26 +42,6 @@ const styles = theme => ({
   menuButton: {
     marginLeft: -12,
     marginRight: 20
-  },
-  sidebar: {
-    width: 300
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1
-  },
-  drawerPaper: {
-    position: "relative",
-    width: 300
-  },
-  content: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3,
-    minWidth: 0 // So the Typography noWrap works
-  },
-  icon: {
-    margin: theme.spacing.unit,
-    color: "gold"
   }
 });
 
@@ -121,32 +90,30 @@ class App extends Component {
   render() {
     const { classes } = this.props;
     const { match, location, history } = this.props;
-    const classBurger = this.state.show
-      ? "hamburger hamburger--arrow is-active"
-      : "hamburger hamburger--arrow";
+
     return (
-      <div className={classes.root}>
-        <AppBar position="absolute" className={classes.appBar}>
+      <div>
+        <AppBar position="static">
           <Toolbar>
-            <Burger
-              className={classBurger}
-              type="button"
-              aria-controls="navigation"
-              aria-expanded="true/false"
-              onClick={this.handleVisible}
+            <IconButton
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="Menu"
             >
-              <span className="hamburger-box">
-                <div className="hamburger-inner" />
-              </span>
-            </Burger>
+              <MenuIcon />
+            </IconButton>
             <Typography variant="title" color="inherit">
               ReactJs Rocks!
             </Typography>
           </Toolbar>
         </AppBar>
+        <div className={classes.root}>
+          <button className="hamburger hamburger--arrow" type="button">
+            <span className="hamburger-box">
+              <div className="hamburger-inner" />
+            </span>
+          </button>
 
-        <main className={classes.content}>
-          <div className={classes.toolbar} />
           <div style={{ padding: 20 }}>
             <Grid container spacing={40}>
               <Grid item xs={12}>
@@ -154,18 +121,11 @@ class App extends Component {
                   <Typography variant="display2">
                     Bienvenue dans les animations
                   </Typography>
-
-                  <div className="floater">
-                    <Gsap />
-                  </div>
+                  <Gsap />
                 </Grid>
               </Grid>
             </Grid>
           </div>
-
-          <StyledImage>
-            <img src="https://www.styled-components.com/static/atom.png" />
-          </StyledImage>
 
           {/*<Grid container xs={12}>
             <Grid item xs={6}>
@@ -286,7 +246,7 @@ class App extends Component {
           </Grid>
 
           */}
-        </main>
+        </div>
       </div>
     );
     {

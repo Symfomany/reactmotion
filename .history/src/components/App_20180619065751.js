@@ -24,9 +24,6 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Button from "@material-ui/core/Button";
 import { Burger } from "../styled/Burger";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import AlarmIcon from "@material-ui/icons/Alarm";
-import "./wickedcss.min.css";
-import { StyledImage } from "../styled/StyledImage";
 // https://material-ui.com/demos/drawers/#swipeable-temporary-drawer
 
 // Example: https://stackblitz.com/edit/01-styled-transition-group?file=index.js
@@ -34,12 +31,7 @@ import { StyledImage } from "../styled/StyledImage";
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
-    height: 430,
-    zIndex: 1,
-    overflow: "hidden",
-    position: "relative",
-    display: "flex"
+    flexGrow: 1
   },
   grid: {
     width: 450,
@@ -53,26 +45,6 @@ const styles = theme => ({
   menuButton: {
     marginLeft: -12,
     marginRight: 20
-  },
-  sidebar: {
-    width: 300
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1
-  },
-  drawerPaper: {
-    position: "relative",
-    width: 300
-  },
-  content: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3,
-    minWidth: 0 // So the Typography noWrap works
-  },
-  icon: {
-    margin: theme.spacing.unit,
-    color: "gold"
   }
 });
 
@@ -125,8 +97,8 @@ class App extends Component {
       ? "hamburger hamburger--arrow is-active"
       : "hamburger hamburger--arrow";
     return (
-      <div className={classes.root}>
-        <AppBar position="absolute" className={classes.appBar}>
+      <div>
+        <AppBar position="static">
           <Toolbar>
             <Burger
               className={classBurger}
@@ -145,8 +117,25 @@ class App extends Component {
           </Toolbar>
         </AppBar>
 
-        <main className={classes.content}>
-          <div className={classes.toolbar} />
+        <div className={classes.root}>
+          <SwipeableDrawer
+            open={!this.state.show}
+            onClose={this.handleVisible}
+            onOpen={this.handleVisible}
+          >
+            <div
+              tabIndex={0}
+              role="button"
+              onClick={this.handleVisible}
+              onKeyDown={this.handleVisible}
+            >
+              <h3>SideBar</h3>
+              <ul>
+                <li>One</li>
+                <li>Two</li>
+              </ul>
+            </div>
+          </SwipeableDrawer>
           <div style={{ padding: 20 }}>
             <Grid container spacing={40}>
               <Grid item xs={12}>
@@ -154,18 +143,11 @@ class App extends Component {
                   <Typography variant="display2">
                     Bienvenue dans les animations
                   </Typography>
-
-                  <div className="floater">
-                    <Gsap />
-                  </div>
+                  <Gsap />
                 </Grid>
               </Grid>
             </Grid>
           </div>
-
-          <StyledImage>
-            <img src="https://www.styled-components.com/static/atom.png" />
-          </StyledImage>
 
           {/*<Grid container xs={12}>
             <Grid item xs={6}>
@@ -286,7 +268,7 @@ class App extends Component {
           </Grid>
 
           */}
-        </main>
+        </div>
       </div>
     );
     {
